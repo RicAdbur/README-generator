@@ -1,14 +1,23 @@
 {
-  "name": "static-site",
+  "name": "readme-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "An application that generates README files for GitHub repos",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RicAdbur/README-generator.git"
+  },
+  "author": "Ric Adbur",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RicAdbur/README-generator/issues"
+  },
+  "homepage": "https://github.com/RicAdbur/README-generator#readme",
   "dependencies": {
-    "inquirer": "8.2.4"
+    "inquirer": "^9.2.10"
   }
 }
