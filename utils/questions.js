@@ -14,7 +14,7 @@ export const questions = [
 
     {
         type: "confirm",
-        name: "needInstallation",
+        name: "confirmInstallation",
         message: "Does your application require installation instructions?"
     },
 
@@ -34,25 +34,31 @@ export const questions = [
         type: "list",
         name: "license",
         message: "What type of license do you want to use for this project?",
-        choices: ["MIT License", "Apache License 2.0", "Mozilla Public License 2.0", "GNU GPLv3", "GNU AGPLv3", "GNU LGPLv3", "Boost Software License 1.0", "The Unlicense"],
+        choices: ["MIT License", "Apache License 2.0", "Mozilla Public License 2.0", "GNU GPLv3", "GNU AGPLv3", "GNU LGPLv3", "Boost Software License 1.0", "The Unlicense", "None"],
     },
 
     {
         type: "confirm",
-        name: "needTests",
+        name: "confirmTests",
         message: "Did you include any tests with your application?"
     },
 
     {
         type: "input",
         name: "tests",
-        message: "List any tests you used for this project, if any:"
+        message: "Provide the filepath for your tests folder:"
+    },
+
+    {
+        type: "confirm",
+        name: "confirmContributing",
+        message: "Does your project require contribution guidelines?"
     },
 
     {
         type: "input",
-        name: "contributors",
-        message: "List any contributors you may have worked with for this project:"
+        name: "contributing",
+        message: "Explain the guidelines for contributing to this project."
     },
 
     {

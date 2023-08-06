@@ -14,7 +14,9 @@ export function licenseBadge(value) {
         return "[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)";
     } else if (value === "Boost Software License 1.0") {
         return "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
-    } else {
+    } else if (value === "The Unlicense") {
         return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
+    } else {
+        return "";
     }
 }
