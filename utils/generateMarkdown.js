@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-// licenseBadge(answers.license) || ""
+// licenseBadge(license) || ""
 
 // // TODO: Create a function that returns the license link
 // // If there is no license, return an empty string
@@ -10,42 +10,40 @@
 // // If there is no license, return an empty string
 // function renderLicenseSection(license) {}
 
-function generateInstallation(answers) {
-  if (!answers.confirmInstallation) {
+
+function generateInstallation(confirmInstallation) {
+  if (!confirmInstallation) {
     return ""
   } else {
     return `## Installation
-    ${answers.installation}`
+    ${installation}`
   }
 }
 
-function generateContributing(answers) {
-  if (!answers.confirmContributing) {
+function generateContributing(confirmContributing) {
+  if (!confirmContributing) {
     return ""
   } else {
     return `## Contributing
-    ${answers.contributing}`
+    ${contributing}`
   }
 }
 
-function generateTests(answers) {
-  if (!answers.confirmTests) {
+function generateTests(confirmTests) {
+  if (!confirmTests) {
     return ""
   } else {
     return `## Tests
-    Tests for this application can be found here: ${answers.tests}`
+    Tests for this application can be found here: ${tests}`
   }
 }
 
-
 // TODO: Create a function to generate markdown for README
-export function generateMarkdown(answers) {
-  console.log("answers in generateMarkdown function:")
-  console.log(answers)
+export function generateMarkdown( { title, description, confirmInstallation, installation, usage, license, confirmTests, tests, confirmContributing, contributing, githubUsername, email } ) {
   return `
-  # ${answers.title}
+  # ${title}
 
-  ${answers.description}
+  ${description}
   
   > ## Table of Contents
   > - **[Installation](#installation)**
@@ -56,22 +54,22 @@ export function generateMarkdown(answers) {
   > - **[Questions](#questions)**
   
   ## Installation
-  ${answers.installation}
+  ${installation}
   
   ## Usage
-  ${answers.usage}
+  ${usage}
   
   ## Contributing
-  ${answers.contributing}
+  ${contributing}
   
   ## Tests
-  Tests for this project can be found in ${answers.tests}
+  Tests for this project can be found in ${tests}
   
   ## License
-  This project is licensed under [${answers.license}]()
+  This project is licensed under [${license}]()
   
   ## Questions
-  If you have any questions, I can be reached at ${answers.email}, and my GitHub username is ${answers.githubUsername}.
+  If you have any questions, I can be reached at ${email}, and my GitHub username is ${githubUsername}.
 `;
 }
 
