@@ -1,18 +1,12 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 import { licenseBadge, licenseLinks } from "./licenseInfo.js"
-// ${licenseBadge.value} || ""
 
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-// function renderLicenseLink(license) {}
+function renderTableOfContents(tableStrings) {
+  return tableStrings.map(tableString => {
+    return `  > - **[${tableString}](#${tableString})**`
+  }).join("\n")
 
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
-// function renderLicenseSection(license) {}
+}
 
-
-// TODO: Create a function to generate markdown for README
 export function generateMarkdown( { title, description, installation, usage, license, tests, contributing, githubUsername, email } ) {
   const badge = licenseBadge(license)
   const licenseLink = licenseLinks(license)
@@ -21,6 +15,9 @@ export function generateMarkdown( { title, description, installation, usage, lic
   ## Contributing
   ${contributing}
   ` : contributing
+
+  const tableOfContentsContributing = !!contributing ? `
+  > - **[Contributing](#contributing)**` : contributing
 
   const finalInstallationString = !!installation ? `
   ## Installation
@@ -32,6 +29,14 @@ export function generateMarkdown( { title, description, installation, usage, lic
   Tests for this project can be found in ${tests}
   ` : tests
 
+  const tableOfContents = renderTableOfContents([
+    "installation",
+    "usage",
+    "tests",
+    "contributing",
+    "questions",
+  ])
+  console.log(tableOfContents)
   
   return `
   
@@ -40,14 +45,9 @@ export function generateMarkdown( { title, description, installation, usage, lic
   ${badge}
 
   ${description}
-  
+
   > ## Table of Contents
-  > - **[Installation](#installation)**
-  > - **[Usage](#usage)**
-  > - **[Contributing](#contributing)**
-  > - **[Tests](#tests)**
-  > - **[License](#license)**
-  > - **[Questions](#questions)**
+${tableOfContents}
   
   ${finalInstallationString}
   

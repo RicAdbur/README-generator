@@ -1,14 +1,10 @@
-// TODO: Include packages needed for this application
 import fs from "fs"
 import inquirer from "inquirer"
 import { questions } from "./utils/questions.js"
 import { generateMarkdown } from "./utils/generateMarkdown.js"
 import { processOptionalQuestions } from "./utils/processOptionalQuestions.js"
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
         .then( async (answers) => {
