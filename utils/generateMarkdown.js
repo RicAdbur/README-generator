@@ -1,6 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-// licenseBadge(license) || ""
+import { licenseBadge, licenseLinks } from "./licenseInfo.js"
+// ${licenseBadge.value} || ""
 
 // // TODO: Create a function that returns the license link
 // // If there is no license, return an empty string
@@ -11,37 +12,32 @@
 // function renderLicenseSection(license) {}
 
 
-function generateInstallation(confirmInstallation) {
-  if (!confirmInstallation) {
-    return ""
-  } else {
-    return `## Installation
-    ${installation}`
-  }
-}
-
-function generateContributing(confirmContributing) {
-  if (!confirmContributing) {
-    return ""
-  } else {
-    return `## Contributing
-    ${contributing}`
-  }
-}
-
-function generateTests(confirmTests) {
-  if (!confirmTests) {
-    return ""
-  } else {
-    return `## Tests
-    Tests for this application can be found here: ${tests}`
-  }
-}
-
 // TODO: Create a function to generate markdown for README
-export function generateMarkdown( { title, description, confirmInstallation, installation, usage, license, confirmTests, tests, confirmContributing, contributing, githubUsername, email } ) {
+export function generateMarkdown( { title, description, installation, usage, license, tests, contributing, githubUsername, email } ) {
+  const badge = licenseBadge(license)
+  const licenseLink = licenseLinks(license)
+
+  const finalContributingString = !!contributing ? `
+  ## Contributing
+  ${contributing}
+  ` : contributing
+
+  const finalInstallationString = !!installation ? `
+  ## Installation
+  ${installation}
+  ` : installation
+
+  const finalTestsString = !!tests ? `
+  ## Tests
+  Tests for this project can be found in ${tests}
+  ` : tests
+
+  
   return `
+  
   # ${title}
+
+  ${badge}
 
   ${description}
   
@@ -53,24 +49,19 @@ export function generateMarkdown( { title, description, confirmInstallation, ins
   > - **[License](#license)**
   > - **[Questions](#questions)**
   
-  ## Installation
-  ${installation}
+  ${finalInstallationString}
   
   ## Usage
   ${usage}
   
-  ## Contributing
-  ${contributing}
+  ${finalContributingString}
   
-  ## Tests
-  Tests for this project can be found in ${tests}
+  ${finalTestsString}
   
   ## License
-  This project is licensed under [${license}]()
+  This project is licensed under ${licenseLink}
   
   ## Questions
   If you have any questions, I can be reached at ${email}, and my GitHub username is ${githubUsername}.
-`;
+`
 }
-
-// export default { generateMarkdown }

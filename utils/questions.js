@@ -13,52 +13,9 @@ export const questions = [
     },
 
     {
-        type: "confirm",
-        name: "confirmInstallation",
-        message: "Does your application require installation instructions?"
-    },
-
-    {
-        type: "input",
-        name: "installation",
-        message: "Provide installation instructions, if any:"
-    },
-
-    {
         type: "input",
         name: "usage",
         message: "Describe how your application is used:"
-    },
-
-    {
-        type: "list",
-        name: "license",
-        message: "What type of license do you want to use for this project?",
-        choices: ["MIT License", "Apache License 2.0", "Mozilla Public License 2.0", "GNU GPLv3", "GNU AGPLv3", "GNU LGPLv3", "Boost Software License 1.0", "The Unlicense", "None"],
-    },
-
-    {
-        type: "confirm",
-        name: "confirmTests",
-        message: "Did you include any tests with your application?"
-    },
-
-    {
-        type: "input",
-        name: "tests",
-        message: "Provide the filepath for your tests folder:"
-    },
-
-    {
-        type: "confirm",
-        name: "confirmContributing",
-        message: "Does your project require contribution guidelines?"
-    },
-
-    {
-        type: "input",
-        name: "contributing",
-        message: "Explain the guidelines for contributing to this project."
     },
 
     {
@@ -73,3 +30,31 @@ export const questions = [
         message: "What is your email address?"
     },
 ];
+
+export const optionalQuestions = [
+    {
+        type: "input",
+        name: "installation",
+        message: "Describe how to install your application:"
+    },
+
+    {
+        type: "input",
+        name: "contributing",
+        message: "Describe the guidelines for contributing you your project:"
+    },
+
+    {
+        type: "input",
+        name: "tests",
+        message: "List the filepath for the folder containing the tests provided with your project:"
+    },
+
+    {
+        type: "list",
+        name: "license",
+        message: "What type of license do you want to use for this project?",
+        choices: ["MIT License", "Apache License 2.0", "Mozilla Public License 2.0", "GNU GPLv3", "GNU AGPLv3", "GNU LGPLv3", "Boost Software License 1.0", "The Unlicense", "None"],
+    },
+
+]

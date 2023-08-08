@@ -21,13 +21,24 @@ export function licenseBadge(value) {
     }
 }
 
-export const licenseLinks = [
-    "https://choosealicense.com/licenses/mit/",
-    "https://choosealicense.com/licenses/apache-2.0/",
-    "https://choosealicense.com/licenses/mpl-2.0/",
-    "https://choosealicense.com/licenses/gpl-3.0/",
-    "https://choosealicense.com/licenses/agpl-3.0/",
-    "https://choosealicense.com/licenses/lgpl-3.0/",
-    "https://choosealicense.com/licenses/bsl-1.0/",
-    "https://choosealicense.com/licenses/unlicense/"
-]
+export function licenseLinks(value) {
+    if (value === "MIT License") {
+        return "[MIT License](https://choosealicense.com/licenses/mit/)";
+    } else if (value === "Apache License 2.0") {
+        return "[Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)";
+    } else if (value === "Mozilla Public License 2.0") {
+        return "[Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/)";
+    } else if (value === "GNU GPLv3") {
+        return "[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)";
+    } else if (value === "GNU AGPLv3") {
+        return "[GNU AGPLv3](https://choosealicense.com/licenses/agpl-3.0/)";
+    } else if (value === "GNU LGPLv3") {
+        return "[GNU LGPLv3](https://choosealicense.com/licenses/lgpl-3.0/)";
+    } else if (value === "Boost Software License 1.0") {
+        return "[Boost Software License 1.0](https://choosealicense.com/licenses/bsl-1.0/)";
+    } else if (value === "The Unlicense") {
+        return "[The Unlicense](https://choosealicense.com/licenses/unlicense/)";
+    } else {
+        return "";
+    }
+}
