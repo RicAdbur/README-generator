@@ -1,12 +1,21 @@
 import { licenseBadge, licenseLinks } from "./licenseInfo.js"
 
+// dynamic table of contents generation
 function renderTableOfContents(tableStrings) {
   return tableStrings.map(tableString => {
     return `  > - **[${tableString}](#${tableString})**`
   }).join("\n")
-
 }
 
+const tableOfContents = renderTableOfContents([
+  "installation",
+  "usage",
+  "tests",
+  "contributing",
+  "questions",
+])
+
+// markdown generator function
 export function generateMarkdown( { title, description, installation, usage, license, tests, contributing, githubUsername, email } ) {
   const badge = licenseBadge(license)
   const licenseLink = licenseLinks(license)
@@ -15,9 +24,6 @@ export function generateMarkdown( { title, description, installation, usage, lic
   ## Contributing
   ${contributing}
   ` : contributing
-
-  const tableOfContentsContributing = !!contributing ? `
-  > - **[Contributing](#contributing)**` : contributing
 
   const finalInstallationString = !!installation ? `
   ## Installation
@@ -28,18 +34,8 @@ export function generateMarkdown( { title, description, installation, usage, lic
   ## Tests
   Tests for this project can be found in ${tests}
   ` : tests
-
-  const tableOfContents = renderTableOfContents([
-    "installation",
-    "usage",
-    "tests",
-    "contributing",
-    "questions",
-  ])
-  console.log(tableOfContents)
   
   return `
-  
   # ${title}
 
   ${badge}
