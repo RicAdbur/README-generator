@@ -1,31 +1,25 @@
-  # Project 1
 
-  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+  # Project
 
-  Of all the projects throughout history, this is certainly one of them.
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+  ## Description
+  It's a project
 
   > ## Table of Contents
-  > - **[Installation](#installation)**
-  > - **[Usage](#usage)**
-  > - **[Contributing](#contributing)**
-  > - **[Tests](#tests)**
-  > - **[License](#license)**
-  > - **[Questions](#questions)**
-
-
-
+  > - **[usage](#usage)**
+  
+  
+  
   ## Usage
-  You use it.
-
-
-  ## Contributing
-  Contribute to this project.  Or don't, I'm not your real dad.
-
-
-
-
+  Use it
+  
+  
+  
+  
+  
   ## License
-  This project is licensed under [The Unlicense](https://choosealicense.com/licenses/unlicense/)
-
+  This project is licensed under [MIT License](https://choosealicense.com/licenses/mit/)
+  
   ## Questions
-  If you have any questions, I can be reached at address@email.com, and my GitHub username is RicAdbur.
+  If you have any questions, I can be reached at email, and my GitHub username is Me.
